@@ -1,9 +1,9 @@
 import { useContext } from "react"
-import CounterContext from "../CounterContext"
+import { useCounterDispatch } from "../CounterContext"
 
 const Button = ({ label, type }) => {
-  const [counter, counterDispatch] = useContext(CounterContext)
-  return <button onClick={() => counterDispatch({type})}>{label}</button>
+  const dispatch = useCounterDispatch()
+  return <button onClick={() => dispatch({type})}>{label}</button>
 }
 
 export default Button
